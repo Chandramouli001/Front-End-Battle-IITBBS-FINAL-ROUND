@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed | LinkedIn</title>
+    <link rel="icon" href="https://static.licdn.com/sc/h/akt4ae504epesldzj74dzred8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- fontfamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* body {
+            background-color: black;
+
+        }
+
+        .navbar {
+            background-color: #b9a3e3;
+        }
+        .navbar a{
+            color: black;
+        }
+        
+        .sidebar-activity, .sidebar-profile-box{
+    background-color: #b9a3e3;
+} 
+.sidebar-ad{
+    background-color: #b9a3e3;
+}
+.sidebar-news {
+    background-color: #b9a3e3;
+}
+.post {
+    background-color: #b9a3e3;
+}
+.create-post {
+    background-color: #b9a3e3;
+}
+.sidebar-activity a{
+    color: rgb(0, 0, 0);
+}
+.sidebar-profile-box a{
+    color: rgb(0, 0, 0);
+} */
+
+#changeStylesButton {
+    align-items: center;
+        padding: 5px 5px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style> 
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <div class="search-box">
+                <img src="./img/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#" class="active-link"><img src="img/home.png"><span>Home</span></a></li>
+                <li><a href="./network.html"><img src="img/network.png"><span>My Network</span></a></li>
+                <li><a href="./job.html"><img src="img/jobs.png"><span>Jobs</span></a></li>
+                <li><a href="./messaging.html"><img src="img/message.png"><span>Messaging</span></a></li>
+                <li><a href="./notification.html"><img src="img/notification.png"><span>Notification</span></a></li>
+               
+                
+
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <div class="online">
+                <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                    class="nav-profile-img" onclick="toggleMenu()">
+            </div>
+        </div><button id="changeStylesButton">🌙</button>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Proflie</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png">
+                    <p>Display & Accesebility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+            
+    </nav>
+    <!-- navbar ended -->
+    <!-- --popup -->
+    <div class="popup-container" id="popup">
+        <div class="header">
+            <img src="img/logo.png">
+            <h1>Welcome to LinkedIn</h1>
+        </div>
+        <div class="input-field">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="input-field">
+            <label for="userImg">User Image:</label>
+            <input type="file" id="userImgInput">
+        </div>
+        <div class="input-field">
+            <label for="descofuser">Description About User:</label>
+            <input type="text" id="descofuser">
+        </div>
+        <div class="input-field">
+            <label for="descofpost">Description Of Post:</label>
+            <input type="text" id="descofpost">
+        </div>
+        <div class="input-field">
+            <label for="imgofpost">Image used in Post:</label>
+            <input type="file" id="imgofpostInput">
+        </div>
+        <div class="buttons-container">
+            <button onclick="popup()">Discard</button>
+            <button onclick="add()">Post</button>
+        </div>
+    </div>
+    <!-- --popup ended-->
+    <div class="container">
+        <div class="left-sidebar">
+            <div class="sidebar-profile-box">
+                <img src="" width="100%" class="cover-img">
+                <div class="sidebar-profile-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <h1>Chandramouli Haldar</h1>
+                    <h3>Student at Guru Nanak Institute of Technology</h3>
+                    <ul>
+                        <li>Your Profile Views<span>100</span></li>
+                        <li>Your Post Views<span>370</span></li>
+                        <li>Your Connections<span>1K</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-profile-link">
+                    <a href=""><img src="img/items.png">My Items</a>
+                    <a href=""><img src="img/premium.png">Try Premium</a>
+                </div>
+            </div>
+            <div class="sidebar-activity" id="sidebarActivity">
+                <h3>RECENT</h3>
+                <a href=""><img src="img/recent.png">Web Development</a>
+                <a href=""><img src="img/recent.png">User Interface</a>
+                <a href=""><img src="img/recent.png">Online Learning</a>
+                <a href=""><img src="img/recent.png">Learn Online</a>
+                <a href=""><img src="img/recent.png">Code Better</a>
+                <a href=""><img src="img/recent.png">Group Learning</a>
+                <h3>GROUPS</h3>
+                <a href=""><img src="img/group.png">Saylani Mass It Tranining</a>
+                <a href=""><img src="img/group.png">The Perfect Dev</a>
+                <a href=""><img src="img/group.png">Techno Kids</a>
+                <a href=""><img src="img/group.png">Web and App Development</a>
+                <h3>HASHTAGS</h3>
+                <a href=""><img src="img/hashtag.png">webdevelopment</a>
+                <a href=""><img src="img/hashtag.png">letsconnect!</a>
+                <div class="discover-more-link">
+                    <a href="">Discover More</a>
+                </div>
+            </div>
+            <p id="showMoreLink" onclick="showSideBar()">Show More <b>+</b></p>
+        </div>
+        <div class="main-content" id="main">
+            <div class="create-post">
+                <div class="create-post-input">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <textarea placeholder="Start a Post"></textarea>
+                </div>
+                <div class="create-post-links">
+                    <li><img src="img/photo.png">Photo</li>
+                    <li><img src="img/video.png">Video</li>
+                    <li><img src="img/event.png">Event</li>
+                    <li onclick="popup()" style="background-color: blueviolet;">Post</li>
+                </div>
+            </div>
+            <div class="sort-by">
+                <hr>
+                <p>Sort By: <span>Top <img src="img/down-arrow.png" alt=""></span></p>
+            </div>
+            <!-- allposts -->
+
+
+            <div class="post">
+                <div class="post-author">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h1>Chandramouli Haldar &middot; <span style="font-weight: lighter;">You</span></h1>
+                        <small>458,015</small>
+                        <small>1d ago &middot; Edited</small>
+                    </div>
+                </div>
+                <p>🌟 Exciting News! 🌟
+                    <br>
+                    I am thrilled to share that I have been selected for the final round of the hackathon organized by
+                    the Web and Design Society at IIT Bhubaneswar! 🎉
+
+                    I am incredibly grateful for this opportunity to showcase my skills and creativity. A big thank you
+                    to the organizers for recognizing my potential and providing such an amazing platform.
+
+                    Looking forward to giving my best in the final round! 💪
+                    <br>
+                    #Hackathon #WebDesign #Grateful #IITBhubaneswar #TechInnovation
+                </p>
+                <div class="post-stats">
+                    <div>
+                        <img src="img/thumbsup.png">
+                        <img src="img/love.png">
+                        <img src="img/clap.png">
+                        <span class="liked-users">Rizwan Bhatti and 43 others</span>
+                    </div>
+                    <div>
+                        <span>22 comments &middot; 24 shares</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+
+                    <div class="post-activity-link">
+                        <img src="img/like.png" class="post-activity-user-icon">
+                        <span>Like</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/comment.png" class="post-activity-user-icon">
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/share.png" class="post-activity-user-icon">
+                        <span>Share</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/send.png" class="post-activity-user-icon">
+                        <span>Send</span>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-author">
+                    <img
+                        src="https://media.licdn.com/dms/image/C4D0BAQGQqTSL8jW88g/company-logo_100_100/0/1651330226074?e=1724284800&v=beta&t=YePQlrgK7OQ0WPssUgr7CFroZATdPdi-er8EDmks_TU">
+                    <div>
+                        <h1>Web and Design Society - IIT Bhubaneswar</h1>
+                        <small>50,096 Followers</small>
+                        <small>13h ago</small>
+                    </div>
+                </div>
+                <p>🌟 Calling all development enthusiasts! 🚀 The Front-End Battle 2024 is here, and the stage is set
+                    for an epic clash of creativity and skill. If you're a seasoned developer and have a keen sense of
+                    what beauty is, this is your chance to shine! Join us for an exhilarating online event where
+                    innovation meets ingenuity, by filling out the registration form.
+                    https://lnkd.in/gD_hn8UG
+
+                    Registration closes on May 14th 11:59pm, so don't miss your shot at glory! hashtag#FrontendBattle
+                    hashtag#CodeWarriors hashtag#DesignShowdown hashtag#WebDevelopment</p>
+                <img src="https://media.licdn.com/dms/image/D5622AQEq9gFH8xyeew/feedshare-shrink_800/0/1715350818890?e=1719446400&v=beta&t=eh08suY9bkTJKNWOKmASgVIaXebas3bMvity-TQ-7oE"
+                    width="100%">
+                <div class="post-stats">
+                    <div>
+                        <img src="img/thumbsup.png">
+                        <img src="img/love.png">
+                        <img src="img/clap.png">
+                        <span class="liked-users">M Sufyan and 72 others</span>
+                    </div>
+                    <div>
+                        <span>22 comments &middot; 24 shares</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+
+                    <div class="post-activity-link">
+                        <img src="img/like.png" class="post-activity-user-icon">
+                        <span>Like</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/comment.png" class="post-activity-user-icon">
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/share.png" class="post-activity-user-icon">
+                        <span>Share</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <img src="img/send.png" class="post-activity-user-icon">
+                        <span>Send</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="sidebar-news">
+                <img src="img/more.png" class="info-icon">
+                <h3>Trending News</h3>
+                <a href="">High demand for skilled manpower</a>
+                <span>1d ago &middot; 1934 readers</span>
+                <a href="">Carrier growing horizontally too</a>
+                <span>10d ago &middot; 1084 readers</span>
+                <a href="">Less work visa for US, more for UK</a>
+                <span>7h ago &middot; 7980 readers</span>
+                <a href="">More hiring = Higher confidence ?</a>
+                <span>1h ago &middot; 1924 readers</span>
+                <a href="">Saylani has announced batch 4 of Techno Kids</a>
+                <span>8h ago &middot; 1906 readers</span>
+                <a href="" class="read-more-link">Read More</a>
+            </div>
+            <div class="sidebar-ad">
+                <small>AD &middot; &middot; &middot;</small>
+                <p>Master the 5 principles of web design</p>
+                <div>
+                    <img src="https://media.licdn.com/dms/image/D4D03AQHyJrtE6WbAfw/profile-displayphoto-shrink_100_100/0/1678030659122?e=1690416000&v=beta&t=9Vnws7rVjaREQebj3HeuNH3GQ_VS0XS4XFnkI5ttBpQ"
+                        alt="">
+                    <img src="https://media.licdn.com/dms/image/C4D0BAQEBFPcB1s3wrg/company-logo_200_200/0/1675703359239?e=1693440000&v=beta&t=H9M2a8YBEdzm-cXDjYWEJQqIbWpvBWnwJUFD7Zxp4zo"
+                        alt="">
+                </div>
+                <b>Share Your Experience With Saylani</b>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7068264850904293377/" class="ad-link"
+                    target="_blank">Learn More</a>
+            </div>
+            <div class="sidebar-useful-links">
+                <a href="">About</a>
+                <a href="">Accesibility</a>
+                <a href="">Help Center</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Advertising</a>
+                <a href="">Get the App</a>
+                <a href="">More</a>
+                <div class="copyright-msg">
+                    <img src="img/logo.png">
+                    <p>All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+       var isStylesChanged = false;
+
+document.getElementById("changeStylesButton").addEventListener("click", function() {
+    if (!isStylesChanged) {
+        document.body.style.backgroundColor = "black";
+
+        var elementsToChange = document.querySelectorAll('.navbar, .sidebar-activity, .sidebar-profile-box, .sidebar-ad, .sidebar-news, .post, .create-post');
+        elementsToChange.forEach(function(element) {
+            element.style.backgroundColor = "#b9a3e3";
+        });
+
+        var linksToChange = document.querySelectorAll('.navbar a, .sidebar-activity a, .sidebar-profile-box a');
+        linksToChange.forEach(function(link) {
+            link.style.color = "black";
+        });
+
+        isStylesChanged = true;
+        document.getElementById("changeStylesButton").innerText = "☀️";
+    } else {
+        // Reset styles
+        location.reload();
+    }
+});
+        </script>
+</body>
+
+</html>

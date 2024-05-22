@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | LinkedIn</title>
+    <link rel="icon" href="https://static.licdn.com/sc/h/akt4ae504epesldzj74dzred8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- fontfamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+        /* Dark Theme */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .navbar {
+    background-color: #212121;
+}
+
+.dark-theme .navbar-left .search-box input[type="text"] {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+.dark-theme .navbar-center ul li a img {
+    filter: brightness(0.9); /* Adjust brightness of icons */
+}
+
+.dark-theme .profile-menu {
+    background-color: #212121;
+}
+
+.dark-theme .profile-menu-link p {
+    color: #ffffff;
+}
+
+.dark-theme .popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .container {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .profile-main {
+    background-color: #212121;
+}
+
+.dark-theme .profile-container {
+    background-color: #333333;
+}
+
+.dark-theme .profile-description {
+    background-color: #333333;
+}
+
+.dark-theme .profile-description h2 {
+    color: #ffffff;
+}
+
+.dark-theme .profile-description p {
+    color: #cccccc;
+}
+
+.dark-theme .profile-description a {
+    color: #ffffff;
+}
+
+.dark-theme .profile-sidebar {
+    background-color: #212121;
+}
+
+.dark-theme .sidebar-ad {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-theme .sidebar-ad p,
+.dark-theme .sidebar-ad b {
+    color: #cccccc;
+}
+
+.dark-theme .sidebar-people {
+    background-color: #333333;
+}
+
+.dark-theme .sidebar-people h3 {
+    color: #ffffff;
+}
+
+.dark-theme .sidebar-people-row h2 {
+    color: #ffffff;
+}
+
+.dark-theme .sidebar-people-row p,
+.dark-theme .sidebar-people-row a {
+    color: #cccccc;
+}
+#changeColorsButton {
+    align-items: center;
+        padding: 5px 5px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <div class="search-box">
+                <img src="./img/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="./index.html"><img src="img/home.png"><span>Home</span></a></li>
+                <li><a href="./network.html"><img src="img/network.png"><span>My Network</span></a></li>
+                <li><a href="./job.html"><img src="img/jobs.png"><span>Jobs</span></a></li>
+                <li><a href="./messaging.html"><img src="img/message.png"><span>Messaging</span></a></li>
+                <li><a href="./notification.html"><img src="img/notification.png"><span>Notification</span></a></li>
+            </ul>
+        </div><button id="changeColorsButton">🌙</button>
+        <div class="navbar-right">
+        <a href="./profile.html"><div class="online">
+            <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                class="nav-profile-img" onclick="toggleMenu()">
+        </div></a>
+        </div>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Proflie</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png">
+                    <p>Display & Accesebility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ended -->
+    <!-- --popup -->
+    <div class="popup-container" id="popup">
+        <div class="header">
+            <img src="img/logo.png">
+            <h1>Welcome to LinkedIn</h1>
+        </div>
+        <div class="input-field">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="input-field">
+            <label for="userImg">User Image:</label>
+            <input type="file" id="userImgInput">
+        </div>
+        <div class="input-field">
+            <label for="descofuser">Description About User:</label>
+            <input type="text" id="descofuser">
+        </div>
+        <div class="input-field">
+            <label for="descofpost">Description Of Post:</label>
+            <input type="text" id="descofpost">
+        </div>
+        <div class="input-field">
+            <label for="imgofpost">Image used in Post:</label>
+            <input type="file" id="imgofpostInput">
+        </div>
+        <div class="buttons-container">
+            <button onclick="popup()">Discard</button>
+            <button onclick="add()">Post</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile-main">
+            <div class="profile-container">
+                <img src="https://media.licdn.com/dms/image/D5616AQEvt5KmdFQ2VA/profile-displaybackgroundimage-shrink_350_1400/0/1701677526770?e=1721865600&v=beta&t=ejnS98J84B5fbwQxYv4ognglOr9Em_w9t3K2DpLpASQ"
+                    width="100%" class="cover-img">
+                <div class="profile-container-inner">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=1721865600&v=beta&t=6OVv2d-A0f6vOU4Lqtl136KLiONrN_rlBSpCZ5N1iMo"
+                        class="profile-pic">
+                    <h1>Chandramouli Haldar</h1>
+                    <b>CSE Student @ Guru Nanak Institute of Technology|| Front-End-Developer || MERN Stack Developer</b>
+                    <p>Kolkata, India &middot; <a>Contact Info</a></p>
+                    <div class="profile-btn">
+                        <a href="" class="primary-btn"><img src="img/connect.png" alt="">Connect</a>
+                        <a href=""><img src="img/message.png" alt="">Chat</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-description">
+                <h2>About</h2>
+                <p>Enthusiastic Computer Science Student with a background in Electronics and Telecommunication Engineering. Adept at crafting seamless connections between code and hardware in the realm of Embedded Systems.<span id="hidden" style="display: none;">Eager to transform innovative ideas into tangible technological solutions, blending the best of both worlds – programming prowess and electronic wizardry. Let's bring creativity to code and make technology resonate with the heartbeat of innovation!</span>
+                </p>
+                <a class="see-more-link" onclick="show()">See <span id="more">More...</span></a>
+            </div>
+
+            <div class="profile-description">
+                <h2>Experience</h2>
+                <div class="profile-desc-row">
+                    <img src="img/microsoft.png">
+                    <div>
+                        <h3>Lead Front-End Developer</h3>
+                        <b>Microsoft &middot; Full-Time</b>
+                        <b>Feb 2021 - Present &middot; 1.5 Years</b>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ducimus a et aperiam, non incidunt eveniet perferendis nam rerum illo at aspernatur consequatur dicta labore quis, sunt, ipsam earum dolores.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="img/google.png">
+                    <div>
+                        <h3>Web Developer</h3>
+                        <b>Google.Inc &middot; Full-Time</b>
+                        <b>Sept 2015 - May 2018 &middot; 2.8 Years</b>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ducimus a et aperiam, non incidunt eveniet perferendis nam rerum illo at aspernatur consequatur dicta labore quis, sunt, ipsam earum dolores.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-description">
+                <h2>Education</h2>
+                <div class="profile-desc-row">
+                    <img src="https://media.licdn.com/dms/image/C4D0BAQGVdTueWoZ0Eg/company-logo_200_200/0/1660843902959?e=1724284800&v=beta&t=hPIGe6ZMkOJAL91Z7cLwARjO3ghJgEUc15eWhVx8p7k" alt="">
+                    <div>
+                        <h3>Guru Nanak Institute of Technology , Kolkata</h3>
+                        <b>BTech in CSE</b>
+                        <b>2023 - 26</b>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="https://media.licdn.com/dms/image/C4D0BAQGVdTueWoZ0Eg/company-logo_200_200/0/1660843902959?e=1724284800&v=beta&t=hPIGe6ZMkOJAL91Z7cLwARjO3ghJgEUc15eWhVx8p7k" alt="">
+                    <div>
+                        <h3>Guru Nanak Institute of Technology , Kolkata</h3>
+                        <b>Diploma in ECE</b>
+                        <b>2020 - 23</b>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-description">
+                <h2>Skills</h2>
+                <a href="#" class="skill-btn">LeaderShip</a>
+                <a href="#" class="skill-btn">Web Design</a>
+                <a href="#" class="skill-btn">Communication</a>
+                <a href="#" class="skill-btn">UI/UX</a>
+                <a href="#" class="skill-btn">Development</a>
+                <a href="#" class="skill-btn">Planning</a>
+                <a href="#" class="skill-btn">Coding</a>
+                <a href="#" class="skill-btn">JavaScript</a>
+                <a href="#" class="skill-btn">Front-End</a>
+                <a href="#" class="skill-btn">HTML CSS</a>
+            </div>
+            <div class="profile-description">
+                <h2>Languages</h2>
+                <a href="#" class="lang-btn">English</a>
+                <a href="#" class="lang-btn">JavaScript</a>
+                <a href="#" class="lang-btn">HTML 5</a>
+                <a href="#" class="lang-btn">CSS 3</a>
+            </div>
+        </div>
+        <div class="profile-sidebar">
+            <div class="sidebar-ad">
+                <small>AD &middot; &middot; &middot;</small>
+                <p>Master the 5 principles of web design</p>
+                <div>
+                    <img src="https://media.licdn.com/dms/image/D4D03AQHyJrtE6WbAfw/profile-displayphoto-shrink_100_100/0/1678030659122?e=1690416000&v=beta&t=9Vnws7rVjaREQebj3HeuNH3GQ_VS0XS4XFnkI5ttBpQ"
+                        alt="">
+                    <img src="img/mi-logo.png" alt="">
+                </div>
+                <b>Brand and demand in Xiaomi</b>
+                <a href="" class="ad-link">Learn More</a>
+            </div>
+            <div class="sidebar-people">
+                <h3>People You May Know</h3>
+                <div class="sidebar-people-row">
+                    <img src="https://media.licdn.com/dms/image/D4E03AQFrmDuWUxQoMg/profile-displayphoto-shrink_200_200/0/1715645354619?e=1721865600&v=beta&t=HNuj5FyTiRWpdaZK-uOfEsxeK0c098rB1_bvvXUU38U">
+                    <div>
+                        <h2>Sundar Pichai</h2>
+                        <p>CEO at GOOGLE</p>
+                        <a href="https://www.linkedin.com/in/sundarpichai/" target="_blank">Connect</a>
+                    </div>
+                </div>
+                <div class="sidebar-people-row">
+                    <img src="https://media.licdn.com/dms/image/C5603AQHHUuOSlRVA1w/profile-displayphoto-shrink_200_200/0/1579726625398?e=1721865600&v=beta&t=8x3c9B0HYP98i5WvTI-K9g5kv1HIiax-c9kCIG5HIS4">
+                    <div>
+                        <h2>Satya Nadella</h2>
+                        <p>CEO at Microsoft</p>
+                        <a href="https://www.linkedin.com/in/satyanadella/" target="_blank">Connect</a>
+                    </div>
+                </div>
+                <div class="sidebar-people-row">
+                    <img src="https://media.licdn.com/dms/image/D4D0BAQHuO5HY79mPOg/company-logo_200_200/0/1708968521116?e=1724284800&v=beta&t=CXTG_ZMBDTioMMFHMUxIZCCxyToL3woyEnF1F5l62-I">
+                    <div>
+                        <h2>JElon Musk</h2>
+                        <p>CEO of Tesla Motors</p>
+                        <a href="https://www.linkedin.com/company/dablim-solu%C3%A7%C3%B5es-gr%C3%A1ficas/" target="_blank">Connect</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var profileMenu = document.getElementById('profileMenu')
+        var seeMore = document.getElementById('hidden')
+        function toggleMenu() {
+            profileMenu.classList.toggle("open-menu");
+        }
+        function show() {
+            if (seeMore.style.display == "none") {
+                seeMore.style.display = "inline-block"
+                document.getElementById('more').innerHTML = "Less..."
+            }
+            else {
+                seeMore.style.display = "none";
+                document.getElementById('more').innerHTML = "More..."
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    const changeColorsButton = document.getElementById('changeColorsButton');
+
+    changeColorsButton.addEventListener('click', function() {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+        } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+        }
+    });
+});
+
+    </script>
+</body>
+
+</html>

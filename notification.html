@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dark Theme */
+        .dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-theme .notification {
+            border: 1px solid #555555;
+            background-color: #333333;
+        }
+
+        .dark-theme .notification h3 {
+            color: #ffffff;
+        }
+
+        .dark-theme .notification p {
+            color: #cccccc;
+        }
+
+        .dark-theme .notification.job {
+            background-color: #1a1a1a;
+        }
+
+        .dark-theme .notification.message {
+            background-color: #222222;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .notification {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .notification h3 {
+            margin-top: 0;
+        }
+
+        .notification p {
+            margin-bottom: 5px;
+        }
+
+        .notification.job {
+            background-color: #e6f7ff;
+        }
+
+        .notification.message {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <div class="search-box">
+                <img src="./img/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="./index.html"><img src="img/home.png"><span>Home</span></a></li>
+                <li><a href="./network.html"><img src="img/network.png"><span>My Network</span></a></li>
+                <li><a href="./job.html"><img src="img/jobs.png"><span>Jobs</span></a></li>
+                <li><a href="./messaging.html"><img src="img/message.png"><span>Messaging</span></a></li>
+                <li><a href="./notification.html" class="active-link"><img
+                            src="img/notification.png"><span>Notification</span></a></li>
+            </ul>
+        </div><button id="changeColorsButton">🌙</button>
+        <div class="navbar-right">
+            <a href="./profile.html">
+                <div class="online">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                        class="nav-profile-img" onclick="toggleMenu()">
+                </div>
+            </a>
+        </div>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Proflie</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png">
+                    <p>Display & Accesebility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar ended -->
+    <!-- --popup -->
+    <div class="popup-container" id="popup">
+        <div class="header">
+            <img src="img/logo.png">
+            <h1>Welcome to LinkedIn</h1>
+        </div>
+        <div class="input-field">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="input-field">
+            <label for="userImg">User Image:</label>
+            <input type="file" id="userImgInput">
+        </div>
+        <div class="input-field">
+            <label for="descofuser">Description About User:</label>
+            <input type="text" id="descofuser">
+        </div>
+        <div class="input-field">
+            <label for="descofpost">Description Of Post:</label>
+            <input type="text" id="descofpost">
+        </div>
+        <div class="input-field">
+            <label for="imgofpost">Image used in Post:</label>
+            <input type="file" id="imgofpostInput">
+        </div>
+        <div class="buttons-container">
+            <button onclick="popup()">Discard</button>
+            <button onclick="add()">Post</button>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="notification job">
+        <h3>New Job Posting</h3>
+        <p>Job Title: Software Engineer</p>
+        <p>Company: GOOGLE.</p>
+        <p>Location: New York</p>
+        <p>Salary: $100,000</p>
+    </div>
+
+    <div class="notification message">
+        <h3>New Message</h3>
+        <p>From: Elon Musk</p>
+        <p>Subject: Meeting Tomorrow</p>
+        <p>Date: May 22, 2024</p>
+    </div>
+    <div class="notification message">
+        <h3>New Message</h3>
+        <p>From: Satya Nadella</p>
+        <p>Subject: Meeting Tomorrow</p>
+        <p>Date: May 22, 2024</p>
+    </div>
+    <div class="notification message">
+        <h3>New Message</h3>
+        <p>From: Jeff Bezos</p>
+        <p>Subject: Meeting Tomorrow</p>
+        <p>Date: May 22, 2024</p>
+    </div>
+
+    <!-- Add more notifications here -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+            const changeColorsButton = document.getElementById('changeColorsButton');
+
+            changeColorsButton.addEventListener('click', function () {
+                if (body.classList.contains('light-theme')) {
+                    body.classList.remove('light-theme');
+                    body.classList.add('dark-theme');
+                } else {
+                    body.classList.remove('dark-theme');
+                    body.classList.add('light-theme');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

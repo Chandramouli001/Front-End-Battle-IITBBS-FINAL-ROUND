@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Network</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dark Theme */
+.dark-theme {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.dark-theme .container {
+    border-color: #444444;
+}
+
+.dark-theme .info-box {
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .connection {
+    border-color: #555555;
+}
+
+.dark-theme .profile-box {
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .profile-box button {
+    background-color: #9146ff; /* Adjust button color if needed */
+}
+
+.dark-theme .popup-container {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-theme .header {
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .input-field input[type="text"],
+.dark-theme .input-field input[type="file"] {
+    background-color: #333333;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+.dark-theme .buttons-container button {
+    background-color: #9146ff; /* Adjust button color if needed */
+}
+
+.dark-theme .job-posting {
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .job-posting .job-details {
+    border-color: #555555;
+}
+
+.dark-theme .job-posting .job-details .job-info button {
+    background-color: #9146ff; /* Adjust button color if needed */
+}
+
+        /* Your existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: calc(33.33% - 20px);
+        }
+
+        .connection {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .profile-box {
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-box p {
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .profile-box button {
+            padding: 8px 20px;
+            background-color:  #9146ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-field input[type="text"],
+        .input-field input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .buttons-container button {
+            padding: 10px 20px;
+            background-color:  #9146ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Job Posting Section Styles */
+        .job-posting {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .job-posting h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .job-posting .job-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .job-posting .job-details img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .job-posting .job-details .job-info {
+            flex: 1;
+        }
+
+        .job-posting .job-details .job-info h3 {
+            margin: 0;
+        }
+
+        .job-posting .job-details .job-info p {
+            margin: 5px 0;
+        }
+
+        .job-posting .job-details .job-info button {
+            padding: 8px 20px;
+            background-color:  #9146ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .job-posting .job-description p {
+            margin: 0;
+        }
+        #changeColorsButton {
+    align-items: center;
+        padding: 5px 5px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo" alt="LinkedIn Logo">
+            </a>
+            <div class="search-box">
+                <img src="./img/search.png" alt="Search Icon">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="./index.html"><img src="img/home.png" alt="Home Icon"><span>Home</span></a></li>
+                <li><a href="./network.html"><img src="img/network.png" alt="Network Icon"><span>My Network</span></a>
+                </li>
+                <li><a href="#" class="active-link"><img src="img/jobs.png" alt="Jobs Icon"><span>Jobs</span></a></li>
+                <li><a href="./messaging.html"><img src="img/message.png" alt="Message Icon"><span>Messaging</span></a></li>
+                <li><a href="./notification.html"><img src="img/notification.png"
+                            alt="Notification Icon"><span>Notification</span></a></li>
+            </ul>
+        </div><button id="changeColorsButton">🌙</button>
+        <div class="navbar-right">
+            <a href="./profile.html"><div class="online">
+                <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                    class="nav-profile-img" onclick="toggleMenu()">
+            </div></a>
+        </div>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                        alt="User Profile Picture">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png" alt="Feedback Icon">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png" alt="Settings Icon">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png" alt="Help Icon">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png" alt="Display Icon">
+                    <p>Display & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png" alt="Logout Icon">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ended -->
+    <!-- --popup -->
+    <div class="popup-container" id="popup">
+        <div class="header">
+            <img src="img/logo.png" alt="LinkedIn Logo">
+            <h1>Welcome to LinkedIn</h1>
+        </div>
+        <div class="input-field">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="input-field">
+            <label for="userImg">User Image:</label>
+            <input type="file" id="userImgInput">
+        </div>
+        <div class="input-field">
+            <label for="descofuser">Description About User:</label>
+            <input type="text" id="descofuser">
+        </div>
+        <div class="input-field">
+            <label for="descofpost">Description Of Post:</label>
+            <input type="text" id="descofpost">
+        </div>
+        <div class="input-field">
+            <label for="imgofpost">Image used in Post:</label>
+            <input type="file" id="imgofpostInput">
+        </div>
+        <div class="buttons-container">
+            <button onclick="popup()">Discard</button>
+            <button onclick="add()">Post</button>
+        </div>
+    </div>
+    <!-- --popup ended-->
+    <div class="container">
+
+        <!-- Info Box HTML -->
+        <div class="job-posting">
+            <h2>Job Posting</h2>
+            <div class="job-details">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ75Q9EvClA_AXpsxkvrXrLRQS6iLAI-Y_MV9FKjZDSEw&s"
+                    alt="Company Logo">
+                <div class="job-info">
+                    <h3>Software Engineer, Search</h3>
+                    <p>Google</p>
+                    <p>Bangalore, Karnataka</p>
+                    <p>Salary 46 LPA</p>
+                    <a
+                        href="https://www.google.com/about/careers/applications/jobs/results/72470432197812934-software-engineer/?src=Online/LinkedIn/linkedin_us&utm_source=linkedin&utm_medium=jobposting&utm_campaign=contract"><button>Apply
+                            Now</button></a>
+                </div>
+            </div>
+            <div class="job-description">
+                <p>Minimum qualifications:
+                    <br>
+                    Bachelor’s degree or equivalent practical experience.
+                    1 year of experience with software development in one or more programming languages (e.g., Python,
+                    C, C++, Java, JavaScript).
+                    1 year of experience with data structures or algorithms.
+                </p>
+            </div>
+        </div>
+        <!-- Add more job postings as needed -->
+        <!-- Info Box HTML -->
+        <div class="job-posting">
+            <div class="job-details">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ75Q9EvClA_AXpsxkvrXrLRQS6iLAI-Y_MV9FKjZDSEw&s"
+                    alt="Company Logo">
+                <div class="job-info">
+                    <h3>Software Engineer, Full-stack, Core</h3>
+                    <p>Google</p>
+                    <p>Bangalore, Karnataka</p>
+                    <p>Salary 56 LPA</p>
+                    <a
+                        href="https://www.google.com/about/careers/applications/jobs/results/87968639692481222-software-engineer/?src=Online/LinkedIn/linkedin_us&utm_source=linkedin&utm_medium=jobposting&utm_campaign=contract"><button>Apply
+                            Now</button></a>
+                </div>
+            </div>
+            <div class="job-description">
+                <p>By applying to this position you will have an opportunity to share your preferred working location
+                    from the following: Hyderabad, Telangana, India; Bangalore, Karnataka, India.Minimum qualifications:
+                    <br>
+
+                    Bachelor’s degree or equivalent practical experience.
+                    1 year of experience with software development in one or more programming languages (e.g., Python,
+                    C, C++, Java, JavaScript).</p>
+            </div>
+        </div>
+
+        <!-- Add more job postings as needed -->
+        <!-- Info Box HTML -->
+        <div class="job-posting">
+            <div class="job-details">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhgJJG9oTxy-VPIWn3TPLf8usxWa_fFVMTCHAta8obA&s"
+                    alt="Company Logo">
+                <div class="job-info">
+                    <h3>Software Engineer</h3>
+                    <p>Microsoft</p>
+                    <p>Bangalore, Karnataka</p>
+                    <p>Salary 26 LPA</p>
+                    <a
+                        href="https://jobs.careers.microsoft.com/global/en/job/1713561/Software-Engineer"><button>Apply
+                            Now</button></a>
+                </div>
+            </div>
+            <div class="job-description">
+                <p>Minimum qualifications:
+                    <br>
+                    Bachelor's degree in computer science, or related technical field AND 1+ year(s) technical
+                    engineering experience coding in languages including, but not limited to, C#, Java, JavaScript, or
+                    Python
+                    OR equivalent experience.
+                </p>
+            </div>
+        </div>
+        <!-- Add more job postings as needed -->
+
+    </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    
+    const changeColorsButton = document.getElementById('changeColorsButton');
+
+    changeColorsButton.addEventListener('click', function() {
+        // Toggle between light and dark themes
+        body.classList.toggle('light-theme');
+        body.classList.toggle('dark-theme');
+        
+    });
+});
+
+        </script>
+</body>
+
+</html>

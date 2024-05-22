@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: calc(33.33% - 20px);
+        }
+
+        .connection {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .profile-box {
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-box p {
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .profile-box button {
+            padding: 8px 20px;
+            background-color:  #9146ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #changeStylesButton {
+    align-items: center;
+        padding: 5px 5px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <div class="search-box">
+                <img src="./img/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="./index.html"><img src="img/home.png"><span>Home</span></a></li>
+                <li><a href="./network.html" class="active-link"><img src="img/network.png"><span>My Network</span></a>
+                </li>
+                <li><a href="./job.html"><img src="img/jobs.png"><span>Jobs</span></a></li>
+                <li><a href="./messaging.html"><img src="img/message.png"><span>Messaging</span></a></li>
+                <li><a href="./notification.html"><img src="img/notification.png"><span>Notification</span></a></li>
+            </ul>
+        </div><button id="changeStylesButton">🌙</button>
+        <div class="navbar-right">
+            <a href="./profile.html"><div class="online">
+                <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                    class="nav-profile-img" onclick="toggleMenu()">
+            </div></a>
+        </div>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Proflie</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png">
+                    <p>Display & Accesebility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ended -->
+    <!-- --popup -->
+    <div class="popup-container" id="popup">
+        <div class="header">
+            <img src="img/logo.png">
+            <h1>Welcome to LinkedIn</h1>
+        </div>
+        <div class="input-field">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="input-field">
+            <label for="userImg">User Image:</label>
+            <input type="file" id="userImgInput">
+        </div>
+        <div class="input-field">
+            <label for="descofuser">Description About User:</label>
+            <input type="text" id="descofuser">
+        </div>
+        <div class="input-field">
+            <label for="descofpost">Description Of Post:</label>
+            <input type="text" id="descofpost">
+        </div>
+        <div class="input-field">
+            <label for="imgofpost">Image used in Post:</label>
+            <input type="file" id="imgofpostInput">
+        </div>
+        <div class="buttons-container">
+            <button onclick="popup()">Discard</button>
+            <button onclick="add()">Post</button>
+        </div>
+    </div>
+    <!-- --popup ended-->
+    
+    <div class="container">
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s"
+                alt="Profile Image">
+            <p>Shrijoy Biswas</p>
+            <br>
+            <button>Connect</button>
+        </div>
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s"
+                alt="Profile Image">
+            <p>Anshuman Shaw</p> <br>
+            <button>Connect</button>
+        </div>
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s"
+                alt="Profile Image">
+            <p>Tony Stark</p> <br>
+            <button>Connect</button>
+        </div>
+        <!-- Add more profile boxes as needed -->
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s"
+                alt="Profile Image">
+            <p>Bhubhan Bam</p> <br>
+            <button>Connect</button>
+        </div>
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s"
+                alt="Profile Image">
+            <p>Ajay Nagar</p> <br>
+            <button>Connect</button>
+        </div>
+        <div class="profile-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&sg"
+                alt="Profile Image">
+            <p>Ashish Chanchalani</p> <br>
+            <button>Connect</button>
+        </div>
+        
+    </div>
+    <script>
+        function toggleShowMore() {
+            const moreButton = document.querySelector('.info-box button');
+            const lessButton = document.querySelector('.info-box button.less');
+            const lessItems = document.querySelectorAll('.info-box li:nth-child(n+6)');
+
+            if (moreButton.classList.contains('less')) {
+                moreButton.textContent = 'Show more';
+                moreButton.classList.remove('less');
+                lessButton.classList.add('less');
+                lessItems.forEach(item => item.style.display = 'none');
+            } else {
+                moreButton.textContent = 'Show less';
+                moreButton.classList.add('less');
+                lessButton.classList.remove('less');
+                lessItems.forEach(item => item.style.display = 'block');
+            }
+        }
+    </script>
+    <script>
+        var isStylesChanged = false;
+        
+        document.getElementById("changeStylesButton").addEventListener("click", function() {
+            if (!isStylesChanged) {
+                // Apply styles
+                document.body.style.backgroundColor = "#B9A3E3";
+        
+        
+        
+                var profileBoxes = document.querySelectorAll('.profile-box');
+                profileBoxes.forEach(function(profileBox) {
+                    profileBox.style.backgroundColor = "#6441A5";
+                });
+        
+        
+                var profileBoxParagraphs = document.querySelectorAll('.profile-box p');
+                profileBoxParagraphs.forEach(function(p) {
+                    p.style.color = "#fff";
+                });
+        
+        
+                isStylesChanged = true;
+                document.getElementById("changeStylesButton").innerText = "☀️";
+            } else {
+                // Reset styles
+                location.reload();
+            }
+        });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #f0f0ff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color:  #f0f0ff8e;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .search-box img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .search-box input[type="text"] {
+            border: none;
+            outline: none;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .contacts {
+            width: 25%;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+        }
+        .contacts .contact {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        .contacts .contact img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .contacts .contact p {
+            margin: 0;
+        }
+        .message-area {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .messages .message {
+            margin-bottom: 20px;
+        }
+        .messages .message.sent {
+            text-align: right;
+        }
+        .messages .message p {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .messages .message.sent p {
+            background-color:  #9146ff;
+            color: white;
+        }
+        .messages .message.received p {
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        .input-area input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .input-area button {
+            padding: 10px 20px;
+            background-color:  #9146ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        } #changeColorsButton {
+    align-items: center;
+        padding: 5px 5px;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    /* Dark Theme */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .search-box {
+    background-color: #1f1f1f;
+}
+
+.dark-theme .search-box input[type="text"] {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.dark-theme .contacts {
+    background-color: #1f1f1f;
+    border-right: 1px solid #333333;
+}
+
+.dark-theme .contacts .contact {
+    border-bottom: 1px solid #333333;
+}
+
+.dark-theme .messages {
+    background-color: #1f1f1f;
+}
+
+.dark-theme .messages .message.sent p {
+    background-color: #9146ff;
+    color: #ffffff;
+}
+
+.dark-theme .messages .message.received p {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-theme .input-area {
+    border-top: 1px solid #333333;
+}
+
+.dark-theme .input-area input[type="text"] {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.dark-theme .input-area button {
+    background-color: #9146ff;
+    color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <div class="search-box">
+                <img src="img/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="./index.html"><img src="img/home.png"><span>Home</span></a></li>
+                <li><a href="./network.html"><img src="img/network.png"><span>My Network</span></a></li>
+                <li><a href="./job.html"><img src="img/jobs.png"><span>Jobs</span></a></li>
+                <li><a href="#" class="active-link"><img src="img/message.png"><span>Messaging</span></a></li>
+                <li><a href="./notification.html"><img src="img/notification.png"><span>Notification</span></a></li>
+            </ul>
+        </div><button id="changeColorsButton">🌙</button>
+        <div class="navbar-right">
+            <a href="./profile.html"><div class="online">
+                <img src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE"
+                    class="nav-profile-img" onclick="toggleMenu()">
+            </div></a>
+        </div>
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4D03AQFKz3Xic6GyNg/profile-displayphoto-shrink_200_200/0/1689095627074?e=2147483647&v=beta&t=md6TN6IQjSVgKvx5EwG1QdTIGPVhNcTnWsvZnPPFrOE">
+                    <div>
+                        <h3>Chandramouli Haldar</h3>
+                        <a href="profile.html">See Your Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="" class="profile-menu-link">
+                    <img src="img/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/setting.png">
+                    <p>Settings and Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="" class="profile-menu-link">
+                    <img src="img/display.png">
+                    <p>Display & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="https://www.linkedin.com/in/chandramouli01" class="profile-menu-link" target="_blank">
+                    <img src="img/logout.png">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="contacts">
+            <div class="contact">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzq_SlnPQBQhllS8yUlNsM4CGkCKT3iYeM9J_b3asU8Q&s" alt="Contact Image">
+                <p>Google HR</p>
+                
+            </div>
+            
+            <div class="contact">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKqwc8YFklnSIYDgwtdCl1qkWB_LSyjm_Sx-4y-L0Qw&s" alt="Contact Image">
+                <p>Elon Musk</p>
+            </div>
+            <!-- Add more contacts as needed -->
+        </div>
+        <div class="message-area">
+            <div class="messages">
+                <div class="message received">
+                    <p>Hello! How are you?</p>
+                    <br><br>
+                    <p>I noticed your profile to be really fascinating. Would you like to join us?</p>
+                </div>
+                <div class="message sent">
+                    <p>I'm good, thanks! How about you?</p>
+                </div>
+                <!-- Add more messages as needed -->
+            </div>
+            <div class="input-area">
+                <input type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript to handle sending messages
+        const input = document.querySelector('.input-area input');
+        const sendButton = document.querySelector('.input-area button');
+        const messages = document.querySelector('.messages');
+
+        sendButton.addEventListener('click', () => {
+            const messageText = input.value.trim();
+            if (messageText) {
+                const message = document.createElement('div');
+                message.classList.add('message', 'sent');
+                message.innerHTML = `<p>${messageText}</p>`;
+                messages.appendChild(message);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        });
+
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    const changeColorsButton = document.getElementById('changeColorsButton');
+
+    changeColorsButton.addEventListener('click', function() {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+        } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
